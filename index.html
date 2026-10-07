@@ -343,22 +343,6 @@ body:hover .cursor { opacity: 1; }
 .academy-card .btn-outline:hover { background: rgba(244,237,226,0.1); }
 @media (max-width: 900px){ .academy-inner { grid-template-columns: 1fr; gap: 3rem; } }
 @media (max-width: 600px){ .academy-section { padding: 6rem 2rem; } .academy-card { padding: 1.8rem; } }
-/* ===== BEFORE / AFTER SLIDER ===== */
-.ba-wrap { max-width: 720px; margin: 0 auto 3.5rem; }
-.ba-cap { text-align: center; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
-.ba-compare { position: relative; width: 100%; aspect-ratio: 2/1; border-radius: 4px; overflow: hidden; user-select: none; -webkit-user-select: none; touch-action: none; cursor: ew-resize; background: var(--mid2); box-shadow: 0 26px 46px -26px rgba(120,80,70,0.4); }
-.ba-compare img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; -webkit-user-drag: none; display: block; }
-.ba-before { clip-path: inset(0 calc(100% - var(--pos,50%)) 0 0); z-index: 2; will-change: clip-path; }
-.ba-label { position: absolute; top: 14px; z-index: 4; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; background: rgba(44,37,32,0.55); padding: 5px 11px; border-radius: 40px; backdrop-filter: blur(4px); pointer-events: none; }
-.ba-label--before { left: 14px; }
-.ba-label--after { right: 14px; }
-.ba-divider { position: absolute; top: 0; bottom: 0; left: var(--pos,50%); width: 2px; z-index: 3; background: #fff; transform: translateX(-1px); pointer-events: none; box-shadow: 0 0 12px rgba(0,0,0,0.25); }
-.ba-handle { position: absolute; top: 50%; left: var(--pos,50%); z-index: 5; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px -4px rgba(0,0,0,0.4); cursor: ew-resize; transition: transform 0.25s var(--ease); }
-.ba-compare:hover .ba-handle { transform: scale(1.06); }
-.ba-handle:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--gold), 0 6px 18px -4px rgba(0,0,0,0.4); }
-.ba-arrows { display: flex; gap: 2px; color: var(--gold); }
-.ba-handle svg { width: 18px; height: 18px; display: block; }
-@media (max-width: 600px){ .ba-compare { aspect-ratio: 3/2; } }
 /* ===== FAQ ===== */
 .faq-section { padding: 9rem 4rem; border-top: 1px solid var(--border); }
 .faq-inner { max-width: 840px; margin: 0 auto; }
@@ -511,7 +495,6 @@ footer { background: var(--ink); border-top: 1px solid var(--border); padding: 5
   <a href="#behandelingen" onclick="closeMobile()">Behandelingen</a>
   <a href="#over" onclick="closeMobile()">Over mij</a>
   <a href="#resultaten" onclick="closeMobile()">Resultaten</a>
-  <a href="#academy" onclick="closeMobile()">Academy</a>
   <a href="#faq" onclick="closeMobile()">Vragen</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
   <a href="https://dgbrowskin.salonized.com/widget_bookings/new" target="_blank" rel="noopener" class="btn btn-fill" style="font-size:0.75rem;margin-top:1rem">Boek een afspraak</a>
@@ -524,7 +507,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); padding: 5
     <li><a href="#behandelingen">Behandelingen</a></li>
     <li><a href="#over">Over mij</a></li>
     <li><a href="#resultaten">Resultaten</a></li>
-    <li><a href="#academy">Academy</a></li>
+    <li></li>
     <li><a href="#faq">Vragen</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -713,14 +696,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); padding: 5
     </div>
     <a href="https://www.instagram.com/dgbrowss/" class="btn btn-outline" target="_blank" rel="noopener">Bekijk Instagram &#8594;</a>
   </div>
-  <div class="ba-wrap reveal">
-    <p class="ba-cap">Lip Blush voor &amp; na</p>
-    <div class="ba-compare"
-         data-before="images/lipblush_before.jpg"
-         data-after="images/lipblush_after.jpg"
-         data-label-before="Before"
-         data-label-after="After"></div>
-  </div>
+  
   <div class="gallery-grid reveal">
     <div class="g-item"><div class="g-ratio"><div class="g-img"><img src="images/gc1.jpg" alt="Brow Lamination resultaat"></div><div class="g-label">Brow Lamination</div></div></div>
     <div class="g-item"><div class="g-ratio"><div class="g-img"><img src="images/powderbrows.jpg" alt="Ombré Powderbrows resultaat"></div><div class="g-label">Ombré Powderbrows</div></div></div>
@@ -734,46 +710,6 @@ footer { background: var(--ink); border-top: 1px solid var(--border); padding: 5
     <a href="https://www.instagram.com/dgbrowss/" class="btn btn-outline" target="_blank" rel="noopener">@dgbrowss</a>
   </div>
 </section>
-
-<!-- ACADEMY -->
-<section class="academy-section" id="academy">
-  <div class="academy-inner">
-    <div class="academy-text reveal">
-      <span class="s-label">DG Academy</span>
-      <h2>Word <em>Brow Artist</em></h2>
-      <p>Droom jij ervan om als Brow Artist aan de slag te gaan en je eigen onderneming te starten? Dan ben je bij DGBrowss Academy aan het juiste adres. Tijdens deze intensieve 1-daagse cursus van ca. 6 uur leer je alles wat je nodig hebt om met vertrouwen je eerste klanten te behandelen. De cursus is geschikt voor zowel beginners als voor iedereen die zijn of haar vaardigheden verder wil uitbreiden.</p>
-      <p>Je begint met een uitgebreid theoriegedeelte, ondersteund door een professioneel theorieboek dat je mag houden. Vervolgens laat ik je stap voor stap een live demonstratie zien van de complete behandeling. Daarna ga je zelf aan de slag op een eigen model, terwijl je persoonlijke begeleiding van mij krijgt. Na een succesvolle afronding ontvang je een officieel certificaat.</p>
-      <p>Je ontvangt daarnaast een complete professionele starterkit t.w.v. &euro;250, zodat je na de cursus meteen goed voorbereid en met de juiste materialen aan de slag kunt.</p>
-      <p>Je leert onder andere Brow Lamination en Brow Mapping toepassen, de wenkbrauwen shapen en waxen, en verven met Hybrid Tint. Daarnaast krijg je waardevol advies over producten, nazorg en het opbouwen van je eigen succesvolle Brow Business.</p>
-    </div>
-    <div class="academy-card reveal reveal-delay-1">
-      <h3>Allround Brow Artist Cursus</h3>
-      <ul class="academy-facts">
-        <li>Duur <span>1 dag (ca. 6 uur)</span></li>
-        <li>Niveau <span>Beginner tot gevorderd</span></li>
-        <li>Inclusief <span>Theorieboek</span></li>
-        <li>Inclusief <span>Professionele starterkit<br>t.w.v. &euro;250</span></li>
-        <li>Afronding <span>Officieel certificaat</span></li>
-      </ul>
-      <div class="academy-price">&euro;899</div>
-      <a href="https://wa.me/31613310529?text=Hoi%20Dilan,%20ik%20heb%20interesse%20in%20de%20Allround%20Brow%20Artist%20Cursus" class="btn btn-fill" target="_blank" rel="noopener">Aanmelden via WhatsApp</a>
-      <a href="mailto:dgbrowss@gmail.com?subject=Interesse%20Allround%20Brow%20Artist%20Cursus" class="btn btn-outline">Aanmelden via e-mail</a>
-      <a href="#contact" class="btn btn-outline">Stel je vraag</a>
-    </div>
-  </div>
-</section>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Allround Brow Artist Cursus",
-  "description": "1-daagse Brow Artist opleiding (ca. 6 uur) bij DGBrowss Academy in Den Haag. Leer Brow Lamination, Brow Mapping, shapen, waxen en verven met Hybrid Tint. Inclusief theorieboek, een professionele starterkit t.w.v. 250 euro, eigen model en officieel certificaat.",
-  "provider": { "@type": "Organization", "name": "DGBrowss Academy", "url": "https://dgbrows.com/" },
-  "offers": { "@type": "Offer", "price": "899", "priceCurrency": "EUR", "category": "Opleiding", "availability": "https://schema.org/InStock" },
-  "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "Onsite", "courseWorkload": "PT6H", "location": { "@type": "Place", "name": "Den Haag, Nederland" } }
-}
-</script>
 
 <!-- REVIEWS -->
 <section class="reviews-section">
@@ -926,7 +862,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); padding: 5
       <ul>
         <li><a href="#over">Over Dilan</a></li>
         <li><a href="#resultaten">Resultaten</a></li>
-        <li><a href="#academy">Academy</a></li>
+        <li></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -1001,40 +937,7 @@ function handleSubmit(e){
     if(btn){ btn.disabled = false; btn.textContent = 'Verstuur bericht'; }
   });
 }
-// Before/After vergelijkingsslider
-(function(){
-  function build(el){
-    var lb = el.dataset.labelBefore || 'Before', la = el.dataset.labelAfter || 'After';
-    el.style.setProperty('--pos','50%');
-    el.innerHTML =
-      '<img class="ba-after" src="'+el.dataset.after+'" alt="'+la+' resultaat" draggable="false">'+
-      '<img class="ba-before" src="'+el.dataset.before+'" alt="'+lb+' resultaat" draggable="false">'+
-      '<span class="ba-label ba-label--before">'+lb+'</span>'+
-      '<span class="ba-label ba-label--after">'+la+'</span>'+
-      '<div class="ba-divider"></div>'+
-      '<div class="ba-handle" tabindex="0" role="slider" aria-label="Vergelijk before en after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">'+
-        '<span class="ba-arrows" aria-hidden="true">'+
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18"/></svg>'+
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18"/></svg>'+
-        '</span>'+
-      '</div>';
-    var handle = el.querySelector('.ba-handle'), pos = 50, drag = false;
-    function set(p){ pos = Math.max(0, Math.min(100, p)); el.style.setProperty('--pos', pos+'%'); handle.setAttribute('aria-valuenow', Math.round(pos)); }
-    function fromX(x){ var r = el.getBoundingClientRect(); set(((x - r.left) / r.width) * 100); }
-    el.addEventListener('pointerdown', function(e){ drag = true; if(el.setPointerCapture) el.setPointerCapture(e.pointerId); fromX(e.clientX); });
-    el.addEventListener('pointermove', function(e){ if(drag) fromX(e.clientX); });
-    el.addEventListener('pointerup', function(){ drag = false; });
-    el.addEventListener('pointercancel', function(){ drag = false; });
-    handle.addEventListener('keydown', function(e){
-      var s = e.shiftKey ? 10 : 2;
-      if(e.key==='ArrowLeft'){ set(pos-s); e.preventDefault(); }
-      else if(e.key==='ArrowRight'){ set(pos+s); e.preventDefault(); }
-      else if(e.key==='Home'){ set(0); e.preventDefault(); }
-      else if(e.key==='End'){ set(100); e.preventDefault(); }
-    });
-  }
-  document.querySelectorAll('.ba-compare').forEach(build);
-})();
+
 </script>
 </body>
 </html>
